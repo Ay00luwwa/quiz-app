@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quiz app{% endblock %}</title>
+    <!-- You can link to an external CSS here or use internal styling -->
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <!-- Add other navigation links here -->
+        </ul>
+    </nav>
+
+    <main>
+    {% block content %}
+
+        <div class="quiz-container">
+            <h1>Simple Quiz</h1>
+            <div class="question">
+                <p>What is the capital of France?</p>
+                <input type="radio" name="q1" value="London"> London<br>
+                <input type="radio" name="q1" value="Paris"> Paris<br>
+                <input type="radio" name="q1" value="Berlin"> Berlin<br>
+                <input type="radio" name="q1" value="Madrid"> Madrid<br>
+            </div>
+
+            <button onclick="checkAnswers()">Submit</button>
+            <div id="result"></div>
+        </div>
+    {% endblock  %}
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2023 My Awesome Django Quiz</p>
+    </footer>
+
+    <script src="{% static 'quiz_app/main.js' %}"></script>
+</body>
+
+</html>
